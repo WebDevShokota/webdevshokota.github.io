@@ -1,12 +1,1 @@
-document.body.onload = function() {
-
-	setTimeout(function() {
-		var preloader = document.getElementById('page-preloader');
-		if( !preloader.classList.contains('done') )
-		{
-			preloader.classList.add('done');
-		} 
-	}, 1000);
-
-}
-
+document.body.onload=function(){setTimeout(function(){var e=document.getElementById("page-preloader");e.classList.contains("done")||e.classList.add("done")},1e3)};
