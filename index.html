@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/preloader.css">
 	<link rel="stylesheet" href="css/styles__media.css">
+	<link rel="stylesheet" href="css/modal_window.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
 	<title>Web-разработчик Шокота Даниил</title>
 </head>
@@ -35,7 +36,7 @@
 					<h1 class="header-title wow fadeInRightBig" data-wow-delay="2.3s">Шокота Даниил</h1>
 					<p class="header-subtitle wow fadeInRightBig" data-wow-delay="2.4s">Верстка на HTML/CSS/JS<br>Разработка сайт-визиток, лендингов и <br>многостраничников<br> под ключ.</p>
 					<div class="header-but-block">
-						<button class="but-communications wow fadeInRightBig" data-wow-delay="2.5s"
+						<button id="popup" href="javascript:void(0);" class="but-communications wow fadeInRightBig" data-wow-delay="2.5s"
 						>Связаться</button>
 						<p class="small wow fadeInRightBig" data-wow-delay="2.6s">*Это бесплатно</p>
 					</div>
@@ -105,17 +106,54 @@
 				</div>
 				<div class="col-md-4">
 					<div class="footer-cta-block">
-						<button class="footer-but wow shake" data-wow-delay="1s">Написать</button>
+						<button id="popup" href="javascript:void(0);" class="footer-but wow shake" data-wow-delay="1s">Написать</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
-
+		
+        <div class="popup-overlay"><!-- //оверлей - отображение формы на затемненном фоне -->
+ 
+          <div class="popWindow subscribe_window"><!-- //основное окно формы Подписки -->
+            <p class="subcsribe-text">Форма для связи</p>
+            <form action="mail.php" method="POST" class="subscribe-form" autocomplete="off">
+              <div>
+                <input type="text" id="name-subscribe" name="user_name" placeholder=" " required>
+                <label for="name-subscribe">Имя <span>*</span></label>
+              </div>
+              <div>
+                <input type="email" id="email-subscribe" name="user_email" placeholder=" " required>
+                <label for="email-subscribe">Email <span>*</span></label>
+              </div>
+              <div class="aligncenter">
+                <button id="popup_but" type="submit" class="btn"><i class="fa fa-check" aria-hidden="true"></i>Связаться</button>
+              </div>
+              <div class="req-fields"><sup>*</sup> обязательное поле</div>
+            </form>
+            <div class="close-btn">&times;</div>
+          </div><!-- /subscribe_window -->
+ 
+          <div class="popWindow thank_you_window"><!-- //благодарственное окно после успешной отправки формы -->
+            <p class="thank_you_title">Отправленно.</p>
+            <p class="thank_you_body">Скоро пришлю ответ на вашу почту.</p>
+            <div class="close-btn">&times;</div>
+          </div><!-- /thank_you_window -->
+ 
+        </div><!-- /popup-overlay -->
+ 
+      </div>
+    </div>
+  </div>
+ 
+  	<script src="js/jquery.min.js"></script>
+  	<script src="js/JQuery_cookie.js"></script>
+  	<script src="js/jQuery.js"></script>
 	<script src="js/scripts.js"></script>
 	<script src="js/wow.min.js"></script>	
 	<script>
 		new WOW().init();
 	</script>
+
 </body>
-</html>
+</html> 
